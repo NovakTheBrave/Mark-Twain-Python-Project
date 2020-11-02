@@ -1,6 +1,6 @@
 # Mark-Twain-Python-Project
 
-This exercise was used to test our knowledge of strings. Given that strings are immutable, how would we design a program to swap the positions of letters? In this code, uses of random, exception cases, and pythonic return statements are displayed. The text file used is also included in this branch. It was obtained from: https://www.gutenberg.org/browse/scores/top
+This exercise was used to test my knowledge of strings. Given that strings are immutable, how would I design a program to swap the positions of letters? In this code, uses of random, exception cases, and pythonic return statements are displayed. The text file used is also included in this branch. It was obtained from: https://www.gutenberg.org/browse/scores/top
 
 This lab was named after Mark Twain for the following quote:
 
