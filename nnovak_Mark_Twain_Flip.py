@@ -5,8 +5,7 @@
 import random
 from string import ascii_letters
 
-#Name of downloaded file
-file_name = "Baron_Lab6.txt"
+file_name = "Baron_Lab6.txt" #Name of chosen downloaded file
 
 ##Open chosen file in read only mode
 file_input = open(file_name,"r")
@@ -23,12 +22,10 @@ def mark_twain_function(string_input):
     
     for letter_line in string_input:
         if letter_line not in letters:
-            return("")
-        #Disregards all ',-_,etc.
+            return("") #Disregards all ',-_,etc.
         
     if len(string_input) <= 3:
-        return(string_input)
-    #Returns exception case where the word cannot be modified by this process
+        return(string_input) #Returns exception case where the word cannot be modified by this process
     
     else:
         rand1 = random.randint(1,len(string_input)-2)
@@ -43,10 +40,10 @@ def mark_twain_function(string_input):
         if string_input[rand1] == string_input[rand2]:
             sep = "\\"
             
-        return(string_input[:i:]+sep+string_input[max(rand1,rand2)]+string_input[i+1:w:]+string_input[min(rand1,rand2)]+string_input[w+1:])
+        return(string_input[:i:]+sep+string_input[max(rand1,rand2)]+string_input[i+1:w:]+string_input[min(rand1,rand2)]+string_input[w+1:]) #Return all combined components
     
 
-
+#-----------------------------------------------------------------
 
 #Utility to check if the function works (provided with assignment)
 #Assuming distinct letters, number of words we can generate is P(n,2)/2,
@@ -59,7 +56,7 @@ for i in range(1000):
     if x not in word_list:
         word_list.append(x)
         
-##We must sort both lists to compare since we are generating random numbers and aren't guranteed the same order
+##Both lists are sorted to compare to compare since random numbers are generated and aren't guranteed the same order
 print("First test passed?:",sorted(['hlleo', 'he\\llo', 'hlelo'])==sorted(word_list))
 
 word_list = []
@@ -75,13 +72,16 @@ for i in range(10000):
     x = mark_twain_function("abcdefghijkl")
     if x not in word_list:
         word_list.append(x)
+        
+#Utility checks to ensure proper function operation:
 print("Third test passed?:",len(word_list)==45)
 
 print("Fourth test passed?:",mark_twain_function("hello!")=="")
 
 print("Fifth test passed?:", mark_twain_function("42 is the answer")=="")
 
-
+#--------------------------------
+#Now, the word jumbling function was built
 
 def word_replacer(string):
     output_string = ""
